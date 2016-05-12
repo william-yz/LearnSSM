@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.william.index.inter.UserInterface">
+    <cache />
+
+    <select id="getUser" resultType="User" parameterType="integer">
+        select * from users where id = #{id}
+    </select>
+    <select id="getUserByUserId" resultType="User" parameterType="string">
+        select * from users where userId = #{userId}
+    </select>
+    <select id="addUser" parameterType="string">
+        insert into users(name) values(#{name})
+    </select>
+</mapper>
